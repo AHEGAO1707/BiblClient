@@ -1,0 +1,23 @@
+
+/*.input-search-wrapper{*/
+/*    margin-bottom: 1rem;*/
+/*}*/
+
+.input-search-wrapper{
+    margin-bottom: 1rem;
+    width: 30%;
+    margin-right: 0;
+    margin-left: auto;
+}
+
+.ant-pagination-item-active a, .ant-pagination-item:hover a, .ant-pagination-next .ant-pagination-item-link, .ant-pagination-next .ant-pagination-item-link:hover {
+    color: #4b6eb9;
+}
+
+.ant-pagination-item-active, .ant-pagination-item:hover, .ant-pagination-next .ant-pagination-item-link:hover {
+    border: 1px solid #4b6eb9;
+}
+
+.ant-btn:hover, .ant-input:hover {
+    border: 1px solid #4b6eb9 !important;
+}

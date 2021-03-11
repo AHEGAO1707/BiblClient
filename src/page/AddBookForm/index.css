@@ -1,0 +1,29 @@
+.add-book-form-container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+h1{
+    text-align: center;
+}
+
+.add-book-form-btn {
+    padding: 7px;
+    border: 1px solid #001529;
+    background-color: #001529;
+    color: aliceblue;
+    font-weight: 500;
+    margin-top: 2rem !important;
+}
+
+.block_form{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 70px;
+}
+
+.block_form_input Input{
+    height: 40px;
+
+}
+

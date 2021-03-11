@@ -1,0 +1,208 @@
+/*.Layout {*/
+/*    height: 100vh;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    box-sizing: border-box;*/
+/*}*/
+
+/*.Layout main {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    flex-grow: 1;*/
+/*    height: auto;*/
+/*}*/
+
+/*!*-----------------------*!*/
+/*.header{*/
+/*    display: flex;*/
+/*    width: 100%;*/
+/*    min-height: 50px;*/
+/*    height: 3.5rem;*/
+/*    background-color: #1e1e1e;*/
+/*    padding: 0 5.5rem;*/
+
+/*}*/
+
+
+
+/*!*-----------------------*!*/
+/*.logo {*/
+/*    margin: auto 0;*/
+/*    color: white;*/
+/*    text-transform: uppercase;*/
+/*    font-size: 1.6em;*/
+/*    cursor: pointer;*/
+/*}*/
+/*!* -----------------------  *!*/
+/*.links {*/
+/*    display: inline-block;*/
+/*    height: 100%;*/
+/*    color: #cccccc;*/
+/*    text-transform: uppercase;*/
+/*    margin: auto;*/
+/*    align-items: center;*/
+/*    font-weight: bold;*/
+/*}*/
+/*ul {*/
+/*    list-style-type: none;*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*    overflow: hidden;*/
+/*}*/
+
+/*li {*/
+/*    float: left;*/
+/*}*/
+/*li a {*/
+/*    display: block;*/
+/*    color: #cccccc;*/
+/*    text-align: center;*/
+/*    padding: 15px 15px;*/
+/*    text-decoration: none;*/
+/*    margin: auto 10px;*/
+/*}*/
+
+/*!* -----------------------  *!*/
+
+/*.icon {*/
+/*    display: inline-block;*/
+/*    margin: auto 5px;*/
+/*    text-align: center;*/
+/*    font-size: 1.4em;*/
+/*}*/
+/*.icon a{*/
+/*    display: block;*/
+/*    color: white;*/
+/*    margin: 0;*/
+/*    padding: 10px 10px;*/
+
+/*}*/
+/*.icon p {*/
+/*    display: inline-block;*/
+/*    justify-content: center;*/
+/*    margin: 0 5px;*/
+/*    font-size: 0.6em;*/
+/*    text-transform: uppercase;*/
+/*}*/
+
+body {
+    background-color: #f0f2f5 !important;
+}
+
+.Layout {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.Layout main {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    height: auto;
+}
+
+/*-----------------------*/
+.header{
+    display: flex;
+    max-width: 100%;
+    min-height: 50px;
+    height: 3.5rem;
+    background-color: #4b6eb9 !important;
+    padding: 0 5.5rem;
+
+}
+
+/*.ant-layout-header {*/
+/*    padding: 0 10% !important;*/
+/*}*/
+
+/*-----------------------*/
+.logo {
+    margin: auto 0;
+    color: white;
+    text-transform: uppercase;
+    font-size: 1.6em;
+    cursor: pointer;
+}
+/* -----------------------  */
+.links {
+    text-transform: uppercase;
+    margin: auto;
+}
+
+.links Button {
+    text-transform: uppercase;
+    margin: auto;
+}
+
+.link-li {
+    transition: 0.5s ease;
+}
+
+.link-li:hover {
+    transition: 0.5s ease;
+    transform: scale(1.05);
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    float: left;
+}
+li a {
+    margin: 0 30px;
+}
+
+/* -----------------------  */
+
+.exit Button span{
+    color: white;
+    font-weight: 600;
+    background-color: #E63246;
+    padding: 5px 20px;
+    border-radius: 0.2rem;
+}
+
+.ant-btn-primary {
+    background: #4b6eb9 !important;
+    border-color: #4b6eb9 !important;
+}
+
+footer {
+    width: 100%;
+    height: 200px;
+    background-color: #fff !important;
+}
+
+
+/* ---------------- */
+
+.allert{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.allert span{
+    font-size: 19px;
+
+}
+
+
+/* ----------------- */
+.bookAcceptance {
+    border-top: 2px solid #001529;
+}
+
+.buttonActionScane{
+    display: grid;
+    justify-content: right;
+    margin: 10px 0;
+}
+

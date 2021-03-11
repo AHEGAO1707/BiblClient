@@ -1,0 +1,14 @@
+.allert{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.allert span{
+    font-size: 19px;
+
+}
+
+.status{
+    color: #14b562;
+}
