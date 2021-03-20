@@ -3,11 +3,9 @@
 /*    margin-bottom: 1rem;*/
 /*}*/
 
-.input-search-wrapper{
-    margin-bottom: 1rem;
-    width: 30%;
-    margin-right: 0;
-    margin-left: auto;
+.input-search-wrapper {
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    border-radius: 5px;
 }
 
 .ant-pagination-item-active a, .ant-pagination-item:hover a, .ant-pagination-next .ant-pagination-item-link, .ant-pagination-next .ant-pagination-item-link:hover {
@@ -20,4 +18,9 @@
 
 .ant-btn:hover, .ant-input:hover {
     border: 1px solid #4b6eb9 !important;
+}
+
+.table-list-book{
+    margin-top: 50px;
+    overflow-x: auto;
 }

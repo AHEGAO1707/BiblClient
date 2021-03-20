@@ -59,3 +59,12 @@ export const deleteOrderRequest = async (book_example_id: Number) => {
     console.log("book_example_", book_example_id)
     return await Api.get(`/orders/closeOrder/${book_example_id}`)
 };
+
+export const getLocationsRequest = async () => {
+    return await Api.get('/locations/allLocations')
+};
+
+export const authClientRequest = async (uid: String) => {
+    console.log("uid", uid)
+    return await Api.post('/auth/client', {uid})
+};

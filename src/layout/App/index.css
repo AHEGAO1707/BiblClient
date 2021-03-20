@@ -23,6 +23,17 @@
 
 /*}*/
 
+.header_nav ul li {
+    list-style-type: none;
+    display: inline;
+    margin: 0 20px;
+    font-size: 15px;
+    font-family: "Rubik", sans-serif;
+    color: red;
+    line-height: 1.44;
+    cursor: pointer;
+}
+
 
 
 /*!*-----------------------*!*/
@@ -206,3 +217,31 @@ footer {
     margin: 10px 0;
 }
 
+.navbar {
+    display: none;
+}
+
+@media (max-width: 1199px) {
+
+    .header_nav {
+        display: none;
+    }
+    .navbar {
+        display: flex;
+        width: 100%;
+    }
+    .header{
+        padding: 0;
+    }
+}
+
+
+.header_nav ul li {
+    list-style-type: none;
+    display: inline;
+    margin: 0 20px;
+    font-size: 15px;
+    color: white;
+    line-height: 1.44;
+    cursor: pointer;
+}

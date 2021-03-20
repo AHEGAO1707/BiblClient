@@ -6,8 +6,7 @@ import {Switch, Route, BrowserRouter, NavLink, Redirect} from "react-router-dom"
 import {connect, Provider, useSelector} from 'react-redux';
 import BookPage from "../../page/BookPage";
 import BookIssue from "../../page/BookIssue";
-import SignUp from "../../page/Auth/SignUp";
-import SignIn from "../../page/Auth/SignIn";
+import Auth from "../../page/Auth";
 import AddBook from "../../page/AddBook"
 import {store} from "../../store/store";
 import AddBookForm from "../../page/AddBookForm";
@@ -110,7 +109,7 @@ const App: React.FC<PropsType> = ({getBookStatus, closeOrder, booksIssue, booksA
                                 <nav className='links'>
                                     <ul>
                                         <li className={"link-li"}><NavLink to={'/add_book'} style={{color: 'white'}}
-                                                                           className='link'>Добавить книгу</NavLink>
+                                                                           className='link'>Каталог</NavLink>
                                         </li>
                                         <li className={"link-li"}>
                                             <NavLink to={'#'} style={{color: 'white'}} className='link'>
@@ -119,18 +118,15 @@ const App: React.FC<PropsType> = ({getBookStatus, closeOrder, booksIssue, booksA
                                                     style={{color: 'white'}}
                                                     onClick={handleScanOpen}
                                                     onFocus={(event) => event.target.blur()}
-                                                >Сканировать
+                                                >Мои книги
                                                 </Button>
                                             </NavLink>
                                         </li>
                                         <li className={"link-li"}><NavLink to={'sign_up'} style={{color: 'white'}}
-                                                                           className='link'>Добавить работника</NavLink>
+                                                                           className='link'>Получить книгу</NavLink>
                                         </li>
                                     </ul>
                                 </nav>
-                                <div className='exit'>
-                                    <Button type='text'>Выход</Button>
-                                </div>
                             </>
                             : null
                         }
@@ -207,18 +203,17 @@ const App: React.FC<PropsType> = ({getBookStatus, closeOrder, booksIssue, booksA
                             <Switch>
                                 {(authState.token) || cookies.get('token')
                                     ? <>
-                                        <Route path="/book/:book_id" component={BookPage}/>
+                                        <Route path="/auth/:uid" component={Auth}/>
+                                        <Route path="/auth/:uid" component={booksIssue}/>
                                         <Route path="/issue" component={BookIssue}/>
-                                        <Route path="/sign_up" component={SignUp}/>
-                                        <Route path="/login" component={SignIn}/>
                                         <Route path={"/add_book"} component={AddBook}/>
                                         <Route path={"/form/add_book"} component={AddBookForm}/>
-                                        <Route path="/home" component={ListBook}/>
+                                        <Route path="/news" component={ListBook}/>
                                     </>
-
                                     : <>
-                                        <Redirect to={'/login'}/>
-                                        <Route path="/login" component={SignIn}/>
+                                        {/*<Redirect to={'/news'}/>*/}
+                                        <Route path="/news" component={AddBookForm}/>
+                                        <Route path="/auth/:uid" component={Auth}/>
                                     </>}
                             </Switch>
                         </div>
