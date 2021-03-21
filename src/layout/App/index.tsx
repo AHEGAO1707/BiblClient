@@ -6,6 +6,7 @@ import {Switch, Route, BrowserRouter, NavLink, Redirect} from "react-router-dom"
 import {connect, Provider, useSelector} from 'react-redux';
 import BookPage from "../../page/BookPage";
 import BookIssue from "../../page/BookIssue";
+import HomePage from "../../page/HomePage";
 import Auth from "../../page/Auth";
 import AddBook from "../../page/AddBook"
 import {store} from "../../store/store";
@@ -20,8 +21,8 @@ import Cookies from "universal-cookie";
 const {Header, Content} = Layout;
 
 type PropsType = {
-    getBookStatus: (book_example_id: Number) => void
-    closeOrder: (book_example_id: Number) => void
+    getBookStatus: (bookExampleId: Number) => void
+    closeOrder: (bookExampleId: Number) => void
     booksIssue: any
     booksAcceptance: any
 }
@@ -52,7 +53,7 @@ const App: React.FC<PropsType> = ({getBookStatus, closeOrder, booksIssue, booksA
                             code = "";
                         }
                     } else {
-                        code += event.key;//while this is not an 'enter' it stores the every key
+                        code += event.key; // while this is not an 'enter' it stores the every key
                     }
                 }
             };
@@ -69,21 +70,21 @@ const App: React.FC<PropsType> = ({getBookStatus, closeOrder, booksIssue, booksA
 
     const handleScanOpen = () => {
         setIsModalVisible(true);
-        setScan((value_scan) => !value_scan)
+        setScan((valueScan) => !valueScan)
     }
 
     const handleScanClose = () => {
         setIsModalVisible(false);
-        setScan((value_scan) => !value_scan)
+        setScan((valueScan) => !valueScan)
         setCodeList([])
     }
 
     const handleScanBookAcceptance = () => {
         booksAcceptance.map((item: any) => (
-                closeOrder(item.book_example_id)
+                closeOrder(item.bookExampleId)
             )
         )
-        notification["success"]({
+        notification.success({
             message: 'Книга успешно получена'
         });
     };
@@ -97,11 +98,12 @@ const App: React.FC<PropsType> = ({getBookStatus, closeOrder, booksIssue, booksA
     return (
         <Provider store={store}>
             <BrowserRouter>
-                <Layout className="layout">
+                <Layout className="layout" >
                     <Header className="header">
                         <div className='logo'>
                             <NavLink to={'/home'} style={{color: 'white'}}>
-                                Электронная библиотека
+                                {/*Электронная библиотека*/}
+                                <img src={"favicon.svg"} alt="" style={{maxWidth: '110px', marginLeft: '-30px'}}/>
                             </NavLink>
                         </div>
                         {(authState.token) || cookies.get('token')
@@ -198,7 +200,7 @@ const App: React.FC<PropsType> = ({getBookStatus, closeOrder, booksIssue, booksA
                         </div>
                     </Modal>
 
-                    <Content style={{padding: '50px'}}>
+                    <Content style={{padding: '35px'}}>
                         <div className="site-layout-content">
                             <Switch>
                                 {(authState.token) || cookies.get('token')
@@ -208,12 +210,15 @@ const App: React.FC<PropsType> = ({getBookStatus, closeOrder, booksIssue, booksA
                                         <Route path="/issue" component={BookIssue}/>
                                         <Route path={"/add_book"} component={AddBook}/>
                                         <Route path={"/form/add_book"} component={AddBookForm}/>
-                                        <Route path="/news" component={ListBook}/>
+                                        <Route path="/list-books" component={ListBook}/>
+                                        <Route path="/home" component={HomePage}/>
+                                        <Route path="/my-books" component={HomePage}/>
                                     </>
                                     : <>
-                                        {/*<Redirect to={'/news'}/>*/}
+                                        <Redirect to={'/home'}/>
                                         <Route path="/news" component={AddBookForm}/>
                                         <Route path="/auth/:uid" component={Auth}/>
+                                        <Route path="/home" component={HomePage}/>
                                     </>}
                             </Switch>
                         </div>

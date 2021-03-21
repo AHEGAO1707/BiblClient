@@ -1,0 +1,39 @@
+.home-page {
+    background: linear-gradient(180deg, #4b6eb9, transparent);
+    padding: 35px;
+    height: 100vh;
+}
+
+.page {
+    display: flex;
+    align-items: center;
+    grid-gap: 5px;
+    margin-bottom: 5px;
+}
+
+.page-right {
+    justify-content: flex-end;
+}
+
+.page img {
+    min-height: 35px;
+}
+
+.page span {
+    font-size: 35px;
+    font-family: cursive;
+    color: #e3e3e3;
+}
+
+.barcode {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+    flex-direction: column;
+}
+
+.barcode-text {
+    font-family: monospace;
+    font-size: 20px;
+    text-align: center;
+}
