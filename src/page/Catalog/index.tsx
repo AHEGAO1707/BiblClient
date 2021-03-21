@@ -93,9 +93,10 @@ const Catalog = () => {
                     <Select
                         mode="multiple"
                         allowClear
-                        style={{width: '100%'}}
+                        style={{width: '100%', height: '40px'}}
                         placeholder="Выберите библиотеку"
                         onChange={handleChange}
+                        size={"large"}
                         className={"input-search-wrapper"}
                     >
                         {locations}
@@ -106,6 +107,7 @@ const Catalog = () => {
                         className={"input-search-wrapper"}
                         placeholder="Введите номер книги / название книги / автора / год выпуска / жанр"
                         onChange={(event) => onSearch(event.target.value)}
+                        size={"large"}
                     />
                 </Col>
                 <Col xs={xs} sm={sm}>

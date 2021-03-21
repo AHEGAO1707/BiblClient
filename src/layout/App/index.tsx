@@ -102,8 +102,11 @@ const App: React.FC<PropsType> = ({getBookStatus, closeOrder, booksIssue, booksA
                         <div className='logo'>
                             <NavLink to={'/home'} style={{color: 'white'}}>
                                 {/*Электронная библиотека*/}
-                                <img src={"favicon.svg"} alt="" style={{maxWidth: '110px'}}/>
+                                <img src={"favicon.svg"} alt="" style={{maxWidth: '70px'}}/>
                             </NavLink>
+                        </div>
+                        <div className="navbar">
+                            <img src="https://img.icons8.com/ios/50/ffffff/menu--v1.png"/>
                         </div>
                         {(authState.token) || cookies.get('token')
                             ? <>
