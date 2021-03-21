@@ -1,7 +1,6 @@
 import React, {useEffect, useState,} from "react";
 import './index.css'
 import {Layout, Button, notification, Modal} from 'antd';
-import ListBook from "../../page/ListBook";
 import {Switch, Route, BrowserRouter, NavLink, Redirect} from "react-router-dom";
 import {connect, Provider, useSelector} from 'react-redux';
 import BookPage from "../../page/BookPage";
@@ -10,13 +9,13 @@ import HomePage from "../../page/HomePage";
 import Auth from "../../page/Auth";
 import AddBook from "../../page/AddBook"
 import {store} from "../../store/store";
-import AddBookForm from "../../page/AddBookForm";
 import {closeOrder, getBookStatus} from "../../store/actions/book";
 import ListItemScan from "../../components/ListItemScan";
 import CardBookAcceptance from "../../components/CardBookAcceptance";
 import CardBookIssue from "../../components/CardBookIssue";
 import {RootState} from "../../store/reducers";
 import Cookies from "universal-cookie";
+import Catalog from "../../page/Catalog";
 
 const {Header, Content} = Layout;
 
@@ -103,7 +102,7 @@ const App: React.FC<PropsType> = ({getBookStatus, closeOrder, booksIssue, booksA
                         <div className='logo'>
                             <NavLink to={'/home'} style={{color: 'white'}}>
                                 {/*Электронная библиотека*/}
-                                <img src={"favicon.svg"} alt="" style={{maxWidth: '110px', marginLeft: '-30px'}}/>
+                                <img src={"favicon.svg"} alt="" style={{maxWidth: '110px'}}/>
                             </NavLink>
                         </div>
                         {(authState.token) || cookies.get('token')
@@ -209,16 +208,15 @@ const App: React.FC<PropsType> = ({getBookStatus, closeOrder, booksIssue, booksA
                                         <Route path="/auth/:uid" component={booksIssue}/>
                                         <Route path="/issue" component={BookIssue}/>
                                         <Route path={"/add_book"} component={AddBook}/>
-                                        <Route path={"/form/add_book"} component={AddBookForm}/>
-                                        <Route path="/list-books" component={ListBook}/>
+                                        <Route path="/list-books" component={Catalog}/>
                                         <Route path="/home" component={HomePage}/>
                                         <Route path="/my-books" component={HomePage}/>
                                     </>
                                     : <>
                                         <Redirect to={'/home'}/>
-                                        <Route path="/news" component={AddBookForm}/>
                                         <Route path="/auth/:uid" component={Auth}/>
                                         <Route path="/home" component={HomePage}/>
+                                        <Route path="/list-books" component={Catalog}/>
                                     </>}
                             </Switch>
                         </div>

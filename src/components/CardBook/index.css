@@ -1,0 +1,15 @@
+.CardBook{
+    display: none;
+}
+
+@media (max-width: 799px) {
+    .CardBook{
+        display: grid;
+        box-shadow: 0 0 10px rgba(0, 102, 255, 0.5);
+    }
+    .Catalog{
+        padding: 10px 0;
+        display: grid;
+        grid-gap: 15px;
+    }
+}

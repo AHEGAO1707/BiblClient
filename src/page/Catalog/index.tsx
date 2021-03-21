@@ -1,8 +1,10 @@
 import React, {useEffect, useState} from "react";
-import {Table, Button, Input, Select, Row, Col} from 'antd';
+import {Table, Button, Input, Select, Row, Col, Checkbox} from 'antd';
 import "./index.css"
 import {NavLink} from "react-router-dom";
 import {getBooks, getLocationsRequest} from "../../api/books";
+import CardBook from "../../components/CardBook";
+import ListItem from "../../components/ListItem";
 
 const {Option} = Select;
 
@@ -33,7 +35,6 @@ const columns = [
         title: 'Действие',
         key: 'action',
         render: (text: string, record: any) => {
-            console.log("record", record)
             return (
 
                 <Button type="primary">
@@ -46,12 +47,16 @@ const columns = [
     },
 ];
 
+const xs = {span: 24, offset: 0}
+const sm = {span: 11}
 
-const ListBook = () => {
+
+const Catalog = () => {
 
     const [locations, setLocations]: any = useState([])
     const [dataBooks, setDataBooks]: any = useState([])
     const [filter, setFilter]: any = useState("")
+    const [filterLib, setFilterLib]: any = useState([])
 
 
     useEffect(() => {
@@ -76,16 +81,15 @@ const ListBook = () => {
     }
 
     function handleChange(value: string) {
-        setFilter(value)
-        console.log(`selected ${value}`);
+        setFilterLib(value)
     }
 
 
     return (
 
-        <div>
-            <Row>
-                <Col span={10} offset={1}>
+        <div className={"ListBook"}>
+            <Row className={"list-filter"}>
+                <Col xs={xs} sm={sm}>
                     <Select
                         mode="multiple"
                         allowClear
@@ -97,26 +101,49 @@ const ListBook = () => {
                         {locations}
                     </Select>
                 </Col>
-                <Col span={10} offset={2}>
+                <Col xs={xs} sm={sm}>
                     <Search
                         className={"input-search-wrapper"}
                         placeholder="Введите номер книги / название книги / автора / год выпуска / жанр"
                         onChange={(event) => onSearch(event.target.value)}
                     />
                 </Col>
+                <Col xs={xs} sm={sm}>
+                    {/*onChange={onChangeCheckbox}*/}
+                    <Checkbox style={{color: '#55B432', fontSize: '17px', fontWeight: 'bold'}}>Выбрать только
+                        свободные</Checkbox>
+                </Col>
             </Row>
             <Table
                 className={"table-list-book"}
                 columns={columns}
                 dataSource={dataBooks.filter((item: any) =>
-                    item.Book.title.includes(filter) ||
-                    item.Book.author.includes(filter) ||
-                    item.Book.date_of_publishing.includes(filter)
+                    (item.Book.title.includes(filter) ||
+                        item.Book.author.includes(filter) ||
+                        item.Book.date_of_publishing.includes(filter)) &&
+                    (String(item.Book_example.location_id)).includes(filterLib)
                 )}
 
             />
+            <br/>
+            <div className="list-book-cards">
+                <ListItem
+                    renderItem={(item: any) => (
+                        <CardBook
+                            data={item}
+                        />
+                    )}
+                    data={dataBooks.filter((item: any) =>
+                        (item.Book.title.includes(filter) ||
+                            item.Book.author.includes(filter) ||
+                            item.Book.date_of_publishing.includes(filter)) &&
+                        (String(item.Book_example.location_id)).includes(filterLib)
+                    )}
+                    params={"Catalog"}
+                />
+            </div>
         </div>
     )
 }
 
-export default ListBook
+export default Catalog
