@@ -97,7 +97,7 @@ const App: React.FC<PropsType> = ({getBookStatus, closeOrder, booksIssue, booksA
     return (
         <Provider store={store}>
             <BrowserRouter>
-                <Layout className="layout" >
+                <Layout className="layout">
                     <Header className="header">
                         <div className='logo'>
                             <NavLink to={'/home'} style={{color: 'white'}}>
@@ -205,26 +205,22 @@ const App: React.FC<PropsType> = ({getBookStatus, closeOrder, booksIssue, booksA
                     <Content style={{padding: '35px'}}>
                         <div className="site-layout-content">
                             <Switch>
+                                <Route path="/auth/:uid" component={Auth}/>
+                                <Route path="/home" component={HomePage}/>
+                                <Route path="/list-books" component={Catalog}/>
                                 {(authState.token) || cookies.get('token')
                                     ? <>
                                         <Route path="/auth/:uid" component={Auth}/>
-                                        <Route path="/auth/:uid" component={booksIssue}/>
-                                        <Route path="/issue" component={BookIssue}/>
-                                        <Route path={"/add_book"} component={AddBook}/>
                                         <Route path="/list-books" component={Catalog}/>
                                         <Route path="/home" component={HomePage}/>
-                                        <Route path="/my-books" component={HomePage}/>
+                                        {/*<Route path="/my-books" component={HomePage}/>*/}
                                     </>
                                     : <>
                                         <Redirect to={'/home'}/>
-                                        <Route path="/auth/:uid" component={Auth}/>
-                                        <Route path="/home" component={HomePage}/>
-                                        <Route path="/list-books" component={Catalog}/>
                                     </>}
                             </Switch>
                         </div>
                     </Content>
-
                 </Layout>
             </BrowserRouter>
         </Provider>)
