@@ -17,6 +17,7 @@
 
 .page img {
     min-height: 35px;
+    display: none;
 }
 
 .page span {

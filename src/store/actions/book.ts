@@ -142,12 +142,12 @@ export const addBookCompilationTrade = (data: {trade_code:string}) => {
  * получить статус книги по book_example_id
  * action: getBookStatus
  */
-export const getBookStatus = (book_example_id: Number) => {
+export const getBookStatus = (bookExampleId: number) => {
     return (dispatch: any) => {
         dispatch({
             type: actions.GET_BOOK_STATUS_REQUEST,
         });
-        apiBook.getBookStatusRequest(book_example_id)
+        apiBook.getBookStatusRequest(bookExampleId)
             .then((response) => {
                 if (response.data.book_status === "На руках"){
                     dispatch({
@@ -169,13 +169,13 @@ export const getBookStatus = (book_example_id: Number) => {
     }
 };
 
-export const closeOrder = (book_example_id: Number) => {
+export const closeOrder = (bookExampleId: number) => {
     return (dispatch: any) => {
         dispatch({
             type: actions.CLOSE_ORDER_REQUEST,
         });
 
-        apiBook.deleteOrderRequest(book_example_id)
+        apiBook.deleteOrderRequest(bookExampleId)
             .then((response) => {
                 dispatch({
                     type: actions.CLOSE_ORDER_REQUEST_SUCCESS,

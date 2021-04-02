@@ -45,8 +45,8 @@ export const updateBookRequest = async (id: any, data: any) => {
 };
 
 
-export const getBookStatusRequest = async (book_example_id: Number) => {
-    return await Api.get(`/booksExample/status/${book_example_id}`)
+export const getBookStatusRequest = async (bookExampleId: number) => {
+    return await Api.get(`/booksExample/status/${bookExampleId}`)
 };
 
 

@@ -20,8 +20,8 @@ import Catalog from "../../page/Catalog";
 const {Header, Content} = Layout;
 
 type PropsType = {
-    getBookStatus: (bookExampleId: Number) => void
-    closeOrder: (bookExampleId: Number) => void
+    getBookStatus: (bookExampleId: number) => void
+    closeOrder: (bookExampleId: number) => void
     booksIssue: any
     booksAcceptance: any
 }
