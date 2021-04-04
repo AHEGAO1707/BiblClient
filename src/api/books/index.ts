@@ -4,7 +4,7 @@ export const getBooks = async () => {
     return await Api.get(`/books/all`)
 };
 
-export const getBookRequest = async (book_id: Number) => {
+export const getBookRequest = async (book_id: number) => {
     return await Api.post(`/books/getBookWithParams`, {book_id: book_id})
 };
 
@@ -68,3 +68,8 @@ export const authClientRequest = async (uid: String) => {
     console.log("uid", uid)
     return await Api.post('/auth/client', {uid})
 };
+
+export const getOrdersRequest = async () => {
+    return await Api.get('/orders/getOrdersClient')
+};
+

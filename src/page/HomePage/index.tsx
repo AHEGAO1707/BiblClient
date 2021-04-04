@@ -1,38 +1,33 @@
-import React, {useEffect, useState} from "react";
-import {Button, Card, Col, Form, Input, Row} from "antd";
-import "./index.css"
+import React from "react";
 import {NavLink} from "react-router-dom";
+import "./index.css"
 
-const xs = {span: 12, offset: 1}
-const lg = {span: 6, offset: 2}
+const menu = [
+    { title: 'Каталог', link: '/list-books', style: ''},
+    { title: 'Мои Книги', link: '/my-books', style: 'page-right'},
+    { title: 'Новости', link: '/list-books', style: ''}
+]
+
+const TEXT_QR_COD = ' Покажите этот QR-код при получении книги'
 
 const HomePage = () => {
     return (
         <div className="home-page">
             <div className="listPage">
-                <NavLink to={'/list-books'} style={{color: 'black'}} className='link'>
-                    <div className="page">
-                        <span>Каталог</span>
-                        <img src="https://img.icons8.com/ios/35/E63246/view-details.png" alt={"hay"}/>
-                    </div>
-                </NavLink>
-                <NavLink to={'/my-books'} style={{color: 'black'}} className='link'>
-                    <div className="page page-right">
-                        <img src="https://img.icons8.com/metro/35/55B432/book-stack.png" alt={"hay"}/>
-                        <span>Мои Книги</span>
-                    </div>
-                </NavLink>
-                <NavLink to={'/list-books'} style={{color: 'black'}} className='link'>
-                    <div className="page">
-                        <span>Новости</span>
-                        <img src="https://img.icons8.com/ios/35/874BA0/news.png" alt={"hay"}/>
-                    </div>
-                </NavLink>
+                {
+                    menu.map((item) => (
+                        <NavLink to={item.link} className='link' key={item.title}>
+                            <div className={`page ${item.style}`}>
+                                <span>{item.title}</span>
+                            </div>
+                        </NavLink>
+                    ))
+                }
             </div>
             <div className="barcode">
                 <img src={"qr-code.svg"} alt=""/>
                 <div className="barcode-text">
-                    Покажите этот QR-код при получении книги
+                    { TEXT_QR_COD }
                 </div>
             </div>
         </div>

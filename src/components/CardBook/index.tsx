@@ -1,7 +1,6 @@
 import React from "react";
-import './index.css'
-import {Card} from 'antd';
-
+import { Card } from 'antd';
+import "../../css/card-book.css"
 
 type PropsType = {
     data: any
@@ -9,7 +8,7 @@ type PropsType = {
 
 const CardBook: React.FC<PropsType> = ({data}) => {
     return (
-        <div className="CardBook">
+        <div className="card-book">
             <Card title={data.Book.title} bordered={false}>
                 <p>
                     Автор: {data.Book.author}

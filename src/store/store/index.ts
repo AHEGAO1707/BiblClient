@@ -3,14 +3,14 @@ import thunk from "redux-thunk";
 import {rootReducer} from "../reducers";
 
 
-let enhancer= applyMiddleware(thunk)
+const enhancer = applyMiddleware(thunk)
 
-if (process.env.NODE_ENV !== "production") {
-    const composeEnhancers =
-        // @ts-ignore
-        typeof window === "object" && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__;
-    enhancer = composeEnhancers(enhancer);
-}
+// if (process.env.NODE_ENV !== "production") {
+//     const composeEnhancers =
+//         // @ts-ignore
+//         typeof window === "object" && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__;
+//     enhancer = composeEnhancers(enhancer);
+// }
 
 
 // const _localStorage: any = localStorage.getItem('reduxState')

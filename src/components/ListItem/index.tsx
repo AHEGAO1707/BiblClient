@@ -1,29 +1,27 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import './index.css'
-
 
 type PropsType = {
     data: any[]
-    renderItem: (item: string, key: number) => any
+    renderItem: (item: any, key: number) => any
     params: any
 }
 
-
 const ListItem: React.FC<PropsType> = ({data, renderItem, params}) => {
-    let nameClass = "listAddBook";
-    if (params !== null) {
-        nameClass = params
-    }
+    const [nameClass, setNameClass] = useState("listAddBook");
 
+    useEffect(() => {
+        if (params !== null) {
+            setNameClass(params)
+        }
+    }, [])
 
     return (
-        <div className={nameClass}>
+        <div className={nameClass} >
             {
                 data.length > 0
-                    ? data.map((item: string, key: number) => renderItem(item, key))
-                    :
-                    <div className="addTitle">
-                    </div>
+                    ? data.map((item: any, key: number) => renderItem(item, key))
+                    : <div className="addTitle" />
             }
         </div>
     )
