@@ -17,7 +17,7 @@ const MyBooks = () => {
 
     return (
         <div className={"ListBook"}>
-            <div className="list-book-cards">
+            <div className="list-book-cards list-my-book-cards">
                 <Spinner status={listOrders.length > 0}>
                     {
                         listOrders.map((item: any) => (
