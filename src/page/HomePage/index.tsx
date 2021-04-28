@@ -5,7 +5,7 @@ import "./index.css"
 const menu = [
     { title: 'Каталог', link: '/list-books', style: ''},
     { title: 'Мои Книги', link: '/my-books', style: 'page-right'},
-    { title: 'Новости', link: '/list-books', style: ''}
+    { title: 'Новости', link: '/news', style: ''}
 ]
 
 const TEXT_QR_COD = ' Покажите этот QR-код при получении книги'

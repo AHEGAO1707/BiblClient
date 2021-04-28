@@ -33,7 +33,7 @@
     justify-content: space-between;
 }
 .list-book-cards{
-    margin-bottom: 5em;
+    margin-bottom: 1em;
 }
 .card-book_a{
     padding-bottom: 0;
@@ -87,6 +87,11 @@
         font-size: larger;
         text-align: center;
     }
+}
+
+Spinner{
+    display: flex;
+
 }
 
 

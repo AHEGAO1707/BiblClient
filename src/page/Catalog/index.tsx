@@ -213,7 +213,6 @@ const Catalog = () => {
     const [filterState, setFilterState] = useState<string>("1")
     const [filterDataBooks, setFilterDataBooks]: any = useState([])
 
-
     useEffect(() => {
         (async () => {
             const response = await getBooks();
