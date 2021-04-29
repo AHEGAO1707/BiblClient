@@ -73,3 +73,6 @@ export const getOrdersRequest = async () => {
     return await Api.get('/orders/getOrdersClient')
 };
 
+export const getNewsRequest = async () => {
+    return await Api.get('/news/all')
+};

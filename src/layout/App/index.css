@@ -253,8 +253,14 @@ footer {
     cursor: pointer;
 }
 
+
+
 @media (max-width: 450px) {
     .logo a {
         font-size: 18px;
     }
+    .links {
+display: none;
+    }
 }
+

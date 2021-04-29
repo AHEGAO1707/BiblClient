@@ -1,9 +1,12 @@
 .example{
-    margin: -20px;
+    /*margin: -20px;*/
     text-align: center;
     background: rgba(0, 0, 0, 0.05);
     display: grid;
-    align-content: center;
     border-radius: 4px;
     min-height: 100vh;
+}
+
+.spinner{
+    align-self: center;
 }

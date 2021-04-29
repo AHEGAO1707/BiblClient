@@ -43,9 +43,9 @@
         grid-gap: 10px;
     }
 
-    .ListBook{
-        padding: 20px;
-    }
+    /*.ListBook{*/
+    /*    padding: 20px;*/
+    /*}*/
 
     .list-book-cards{
         box-shadow: 0 0 10px rgba(0,0,0,0.5);

@@ -9,7 +9,7 @@ type PropsType = {
 const Spinner: React.FC<PropsType> = ({children, status}) => {
     return (
        <div className="example">
-           { status ? children : <Spin size="large" />}
+           { status ? children : <Spin size="large" className="spinner"/>}
        </div>
     )
 }

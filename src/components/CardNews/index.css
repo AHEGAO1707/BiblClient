@@ -1,0 +1,20 @@
+.book_item{
+    display: flex;
+    justify-content: space-between;
+}
+
+.ant-typography-expand{
+    display: block !important;
+    text-align: left !important;
+    text-decoration: underline !important;
+    color: blue !important;
+    margin: 0 !important;
+}
+
+.ant-card-body{
+    text-align: left;
+}
+
+.ant-card{
+    margin-bottom: 10px;
+}

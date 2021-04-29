@@ -5,6 +5,7 @@ import {Switch, Route, BrowserRouter, NavLink, Redirect} from "react-router-dom"
 import {connect, Provider, useSelector} from 'react-redux';
 import HomePage from "../../page/HomePage";
 import Auth from "../../page/Auth";
+import News from "../../page/News";
 import {store} from "../../store/store";
 import {closeOrder, getBookStatus} from "../../store/actions/book";
 
@@ -74,6 +75,7 @@ const App: React.FC<PropsType> = ({ booksIssue, booksAcceptance }) => {
                                 <Route path="/home" component={HomePage}/>
                                 <Route path="/list-books" component={Catalog}/>
                                 <Route path="/my-books" component={MyBooks}/>
+                                <Route path="/news" component={News}/>
                                 {(authState.token) || cookies.get('token')
                                     ? <>
                                         <Route path="/auth/:uid" component={Auth}/>
