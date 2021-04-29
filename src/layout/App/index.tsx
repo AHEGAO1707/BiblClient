@@ -33,40 +33,40 @@ const App: React.FC<PropsType> = ({ booksIssue, booksAcceptance }) => {
         <Provider store={store}>
             <BrowserRouter>
                 <Layout className="layout">
-                    <Header className="header">
-                        <NavLink to={'/home'} style={{color: 'white'}}>
-                            <div className='logo' />
-                        </NavLink>
-                        <div className="navbar">
-                            <img src={IMAGE_URL}/>
-                        </div>
-                        {(authState.token) || cookies.get('token')
-                            ? <>
-                                <nav className='links'>
-                                    <ul>
-                                        <li className={"link-li"}><NavLink to={'/add_book'} style={{color: 'white'}}
-                                                                           className='link'>Каталог</NavLink>
-                                        </li>
-                                        <li className={"link-li"}>
-                                            <NavLink to={'#'} style={{color: 'white'}} className='link'>
-                                                <Button
-                                                    type='text'
-                                                    style={{color: 'white'}}
-                                                    onClick={() => console.log('1')}
-                                                    onFocus={(event) => event.target.blur()}
-                                                >Мои книги
-                                                </Button>
-                                            </NavLink>
-                                        </li>
-                                        <li className={"link-li"}><NavLink to={'sign_up'} style={{color: 'white'}}
-                                                                           className='link'>Получить книгу</NavLink>
-                                        </li>
-                                    </ul>
-                                </nav>
-                            </>
-                            : null
-                        }
-                    </Header>
+                    {/*<Header className="header">*/}
+                    {/*    <NavLink to={'/home'} style={{color: 'white'}}>*/}
+                    {/*        <div className='logo' />*/}
+                    {/*    </NavLink>*/}
+                    {/*    <div className="navbar">*/}
+                    {/*        <img src={IMAGE_URL}/>*/}
+                    {/*    </div>*/}
+                    {/*    {(authState.token) || cookies.get('token')*/}
+                    {/*        ? <>*/}
+                    {/*            <nav className='links'>*/}
+                    {/*                <ul>*/}
+                    {/*                    <li className={"link-li"}><NavLink to={'/add_book'} style={{color: 'white'}}*/}
+                    {/*                                                       className='link'>Каталог</NavLink>*/}
+                    {/*                    </li>*/}
+                    {/*                    <li className={"link-li"}>*/}
+                    {/*                        <NavLink to={'#'} style={{color: 'white'}} className='link'>*/}
+                    {/*                            <Button*/}
+                    {/*                                type='text'*/}
+                    {/*                                style={{color: 'white'}}*/}
+                    {/*                                onClick={() => console.log('1')}*/}
+                    {/*                                onFocus={(event) => event.target.blur()}*/}
+                    {/*                            >Мои книги*/}
+                    {/*                            </Button>*/}
+                    {/*                        </NavLink>*/}
+                    {/*                    </li>*/}
+                    {/*                    <li className={"link-li"}><NavLink to={'sign_up'} style={{color: 'white'}}*/}
+                    {/*                                                       className='link'>Получить книгу</NavLink>*/}
+                    {/*                    </li>*/}
+                    {/*                </ul>*/}
+                    {/*            </nav>*/}
+                    {/*        </>*/}
+                    {/*        : null*/}
+                    {/*    }*/}
+                    {/*</Header>*/}
 
                     <Content>
                         <div className="site-layout-content">

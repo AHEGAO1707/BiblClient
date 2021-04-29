@@ -1,11 +1,10 @@
 .card-book{
-    display: none;
-}
-
-.card-book{
     display: grid;
+    max-height: 33%;
     grid-gap: 15px;
 }
+
+
 
 @media (max-width: 799px) {
     .card-book{

@@ -39,12 +39,12 @@
 }
 
 .list-book-cards{
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    /*box-shadow: 0 0 10px rgba(0,0,0,0.5);*/
     padding: 0 0 !important;
     display: grid;
     grid-gap: 15px;
     overflow-y: auto;
-    /*height: 38em;*/
+    height: 38em;
 }
 .catalog{
     display: grid;
