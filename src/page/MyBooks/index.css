@@ -47,6 +47,7 @@
 .my-book-header{
     text-align: center;
     font-size: 2.5em;
+    max-height: 50px;
 }
 .list-my-book-cards{
     box-shadow: none;

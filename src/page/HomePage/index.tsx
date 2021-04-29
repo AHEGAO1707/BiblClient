@@ -2,7 +2,10 @@ import React from "react";
 import {NavLink} from "react-router-dom";
 import "./index.css"
 
+
+// tslint:disable-next-line:no-var-requires
 const Barcode = require('react-barcode');
+// tslint:disable-next-line:no-var-requires
 const QRCode = require('qrcode.react');
 
 const menu = [
@@ -13,7 +16,7 @@ const menu = [
 
 const TEXT_QR_COD = ' Покажите этот QR-код при получении книги'
 
-function make() {         //заглушка для генерации id студента
+function make() {         // заглушка для генерации id студента
     let text = "";
     const possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 

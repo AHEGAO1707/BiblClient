@@ -34,6 +34,23 @@
     justify-content: space-between;
 }
 
+.ListBook{
+    padding: 20px;
+}
+
+.list-book-cards{
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    padding: 0 0 !important;
+    display: grid;
+    grid-gap: 15px;
+    overflow-y: auto;
+    /*height: 38em;*/
+}
+.catalog{
+    display: grid;
+    gap: 20px;
+}
+
 @media (max-width: 799px) {
     .table-list-book {
         display: none;
@@ -43,22 +60,6 @@
         grid-gap: 10px;
     }
 
-    .ListBook{
-        padding: 20px;
-    }
-
-    .list-book-cards{
-        box-shadow: 0 0 10px rgba(0,0,0,0.5);
-        padding: 0 0 !important;
-        display: grid;
-        grid-gap: 15px;
-        overflow-y: auto;
-        height: 38em;
-    }
-    .catalog{
-        display: grid;
-        gap: 20px;
-    }
 }
 
 

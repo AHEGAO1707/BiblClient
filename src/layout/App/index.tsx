@@ -68,7 +68,7 @@ const App: React.FC<PropsType> = ({ booksIssue, booksAcceptance }) => {
                         }
                     </Header>
 
-                    <Content style={{padding: '35px'}}>
+                    <Content>
                         <div className="site-layout-content">
                             <Switch>
                                 <Route path="/auth/:uid" component={Auth}/>

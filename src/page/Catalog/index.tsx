@@ -147,12 +147,12 @@ const Catalog = () => {
                     <span>Найдено экземпляров: {filterDataBooks.length}</span>
                 </Col>
             </Row>
-            <Table
-                className={"table-list-book"}
-                columns={columns}
-                dataSource={filterDataBooks}
+            {/*<Table*/}
+            {/*    className={"table-list-book"}*/}
+            {/*    columns={columns}*/}
+            {/*    dataSource={filterDataBooks}*/}
 
-            />
+            {/*/>*/}
             <br/>
             <div className="list-book-cards">
                 <ListItem
