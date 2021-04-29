@@ -1,4 +1,14 @@
 .list-news-cards{
     justify-self: flex-start;
-    padding: 20px 10px;
+    padding: 20px 15px;
+    display: grid;
+    gap: 10px;
+}
+
+.ant-card-body{
+    padding: 20px !important;
+}
+
+.ant-card{
+    box-shadow: 2px 2px 2px 2px #0000002e;
 }

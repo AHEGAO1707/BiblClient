@@ -1,7 +1,8 @@
 import React from "react";
-import {Card, Typography,} from 'antd';
+import {Card, Typography} from 'antd';
 import './index.css'
-const { Title, Paragraph, Text, Link } = Typography;
+
+const {Paragraph} = Typography;
 
 type PropsType = {
     item: {
@@ -18,20 +19,23 @@ const CardNews: React.FC<PropsType> = ({
                                            key
                                        }) => {
 
-    const [ellipsis, setEllipsis] = React.useState(true);
+    const [ellipsis] = React.useState(true);
+
     return (
         <div key={key}>
             <Card
                 bordered={false}
-                cover={<img alt="image_url" src={item.image_url} />}
+                cover={<img alt="image_url" src={item.image_url}/>}
             >
-                    <Paragraph
-                        ellipsis={ellipsis ? {rows: 3.1, suffix: '\n', expandable: true, symbol: 'Показать полностью' } : false}>
+                <Paragraph
+                    style={{whiteSpace: "pre-wrap"}}
+                    ellipsis={ellipsis ? {
+                        rows: 5.2,
+                        expandable: true,
+                        symbol: 'Показать полностью...'
+                    } : false}>
                     {item.content}
                 </Paragraph>
-                {/*<Meta*/}
-                {/*    description={item.content}*/}
-                {/*      style={{textAlign: 'left'}}/>*/}
             </Card>
         </div>
     )
