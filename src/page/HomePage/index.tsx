@@ -1,6 +1,6 @@
 import React from "react";
 import {NavLink} from "react-router-dom";
-import "./index.css"
+import "./index.css";
 
 const menu = [
     { title: 'Каталог', link: '/list-books', style: ''},
@@ -8,7 +8,23 @@ const menu = [
     { title: 'Новости', link: '/list-books', style: ''}
 ]
 
-const TEXT_QR_COD = ' Покажите этот QR-код при получении книги'
+const TEXT_QR_COD = ' Покажите этот штрихкод при получении книги'
+
+var Barcode = require('react-barcode')
+// var QRCode = require('qrcode.react')
+
+function makeid() {         //заглушка для генерации id студента
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  
+    for (var i = 0; i < 10; i++)
+      text += possible.charAt(Math.floor(Math.random() * possible.length));
+  
+    return text;
+  }
+const stud_id=makeid();
+  
+
 
 const HomePage = () => {
     return (
@@ -25,7 +41,9 @@ const HomePage = () => {
                 }
             </div>
             <div className="barcode">
-                <img src={"qr-code.svg"} alt=""/>
+                {/* <img src={"qr-code.svg"} alt=""/> */}
+                <Barcode value={stud_id} background="transparent"/>
+                {/* <QRCode value={stud_id} bgColor="transparent" /> */}
                 <div className="barcode-text">
                     { TEXT_QR_COD }
                 </div>
