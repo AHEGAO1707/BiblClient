@@ -2,13 +2,28 @@ import React from "react";
 import {NavLink} from "react-router-dom";
 import "./index.css"
 
+const Barcode = require('react-barcode');
+const QRCode = require('qrcode.react');
+
 const menu = [
-    { title: 'Каталог', link: '/list-books', style: ''},
-    { title: 'Мои Книги', link: '/my-books', style: 'page-right'},
-    { title: 'Новости', link: '/news', style: ''}
+    {title: 'Каталог', link: '/list-books', style: ''},
+    {title: 'Мои Книги', link: '/my-books', style: 'page-right'},
+    {title: 'Новости', link: '/news', style: ''}
 ]
 
 const TEXT_QR_COD = ' Покажите этот QR-код при получении книги'
+
+function make() {         //заглушка для генерации id студента
+    let text = "";
+    const possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    for (let i = 0; i < 10; i++)
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+    return text;
+}
+
+const stud_id = make();
 
 const HomePage = () => {
     return (
@@ -25,9 +40,21 @@ const HomePage = () => {
                 }
             </div>
             <div className="barcode">
-                <img src={"qr-code.svg"} alt=""/>
+                <QRCode
+                    value={stud_id}
+                    bgColor="transparent"
+                    displayValue={false}
+                    size={250}
+                    level={'H'}
+                />
+                <Barcode
+                    value={stud_id}
+                    background="transparent"
+                    displayValue={false}
+                    size={250}
+                />
                 <div className="barcode-text">
-                    { TEXT_QR_COD }
+                    {TEXT_QR_COD}
                 </div>
             </div>
         </div>

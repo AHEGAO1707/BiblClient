@@ -1,6 +1,6 @@
 .example{
     text-align: center;
-    background: rgba(0, 0, 0, 0.05);
+    /*background: rgba(0, 0, 0, 0.05);*/
     display: grid;
     border-radius: 4px;
     min-height: 100vh;

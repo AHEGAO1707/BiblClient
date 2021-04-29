@@ -27,10 +27,9 @@
 }
 
 .barcode {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    justify-items: center;
     margin-top: 40px;
-    flex-direction: column;
 }
 
 .barcode-text {
@@ -41,4 +40,8 @@
 
 .link {
     color: black;
+}
+
+svg{
+    max-width: 100%;
 }
